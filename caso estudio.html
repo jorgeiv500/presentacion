@@ -374,6 +374,37 @@
 						Evaluamos el modelo utilizando métricas como MAE y MSE.
 					</aside>
 				</section>
+				<!-- Diapositiva 13: Práctica: Evaluación del Modelo -->
+				<section>
+					<h2>Práctica: Evaluación del Modelo</h2>
+					<p>Tómate unos minutos para evaluar tu modelo.</p>
+				</section>
+				<!-- Diapositiva: funciones de winters -->
+				<section>
+					<h2>funciones de winters para calcular en todas</h2>
+					<pre><code>
+						def winter_todas(df1):
+						model = ExponentialSmoothing(df1, seasonal_periods=7, trend='add', seasonal='mul').fit()
+						a = pd.DataFrame(model.fittedvalues)
+						a.columns = [df1.name]
+						return a
+					</code></pre>
+					<p>Este fragmento de código realiza las siguientes tareas:</p>
+					
+						
+				</section>
+				<section>
+					<h2>funcione 2 de winters para calcular en todas</h2>
+					<pre><code>
+						dp = df.copy()
+						for i in range(len(df.columns)):
+						g = winter_todas(df.iloc[:, i] + 1)
+						dp.iloc[:, i] = g.values
+					</code></pre>
+					<p>Egenera una matriz como df pero llamada dp con los pronosticos en vez de los valores reales.:</p>
+					
+						
+				</section>
 				
 				<!-- Diapositiva 13: Práctica: Evaluación del Modelo -->
 				<section>
