@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Guía Paso a Paso para Pronosticar con Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Diapositiva 5: Importar Datos: Paso 1 -->
+            <section>
+                <h2>Importar Datos: Paso 1</h2>
+                <pre><code>
+                import pandas as pd
+                df = pd.read_excel('link_de_datos')
+                </code></pre>
+                <p>Este código importa la biblioteca Pandas y lee los datos desde un archivo de Excel en un DataFrame.</p>
+            </section>
+            
+            <!-- Diapositiva 6: Práctica: Importar Datos -->
+            <section>
+                <h2>Práctica: Importar Datos</h2>
+                <p>Tómate unos minutos para importar los datos por tu cuenta.</p>
+            </section>
+            
+            <!-- Diapositiva 7: Explorar Datos para una Tienda: Paso 2 -->
+            <section>
+                <h2>Explorar Datos para una Tienda: Paso 2</h2>
+                <pre><code>
+                df1 = df['Nombre_de_la_tienda']
+                df1.head()
+                </code></pre>
+                <p>Este código filtra los datos para una tienda específica y muestra las primeras filas del DataFrame.</p>
+            </section>
+            
+            <!-- Diapositiva 8: Práctica: Exploración de Datos -->
+            <section>
+                <h2>Práctica: Exploración de Datos</h2>
+                <p>Tómate unos minutos para explorar los datos por tu cuenta.</p>
+            </section>
+            
+            <!-- Diapositiva 9: Introducción a Modelos de Pronóstico: Paso 3 -->
+            <section>
+                <h2>Introducción a Modelos de Pronóstico: Paso 3</h2>
+                <p>Vamos a utilizar Suavizado Exponencial para este caso de estudio.</p>
+            </section>
+            
+            <!-- Diapositiva 10: Implementar Suavizado Exponencial: Paso 4 -->
+            <section>
+                <h2>Implementar Suavizado Exponencial: Paso 4</h2>
+                <pre><code>
+                from statsmodels.tsa.api import ExponentialSmoothing
+                modelo = ExponentialSmoothing(df1, seasonal='add', seasonal_periods=7)
+                resultado = modelo.fit()
+                </code></pre>
+                <p>Este código importa la clase ExponentialSmoothing y crea un modelo usando los datos filtrados.</p>
+            </section>
+            
+            <!-- Diapositiva 11: Práctica: Implementación del Modelo -->
+            <section>
+                <h2>Práctica: Implementación del Modelo</h2>
+                <p>Tómate unos minutos para implementar el modelo por tu cuenta.</p>
+            </section>
+            
+            <!-- Diapositiva 12: Evaluación del Modelo: Paso 5 -->
+            <section>
+                <h2>Evaluación del Modelo: Paso 5</h2>
+                <pre><code>
+                # Métricas de evaluación como MAE, MSE
+                </code></pre>
+                <p>En este paso, evaluamos el modelo usando métricas como el Error Absoluto Medio (MAE) y el Error Cuadrático Medio (MSE).</p>
+            </section>
+            
+            <!-- Diapositiva 13: Práctica: Evaluación del Modelo -->
+            <section>
+                <h2>Práctica: Evaluación del Modelo</h2>
+                <p>Tómate unos minutos para evaluar tu modelo.</p>
+            </section>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            slideNumber: true
+        });
+    </script>
+</body>
+
+</html>

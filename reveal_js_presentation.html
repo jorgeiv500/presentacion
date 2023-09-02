@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Step-by-Step Guide on Forecasting with Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 5: Importing Data: Step 1 -->
+            <section>
+                <h2>Importing Data: Step 1</h2>
+                <pre><code>
+                import pandas as pd
+                df = pd.read_excel('data_link')
+                </code></pre>
+                <aside class="notes">
+                    In this step, we import the data using the Pandas library.
+                </aside>
+            </section>
+            
+            <!-- Slide 6: Hands-On: Importing Data -->
+            <section>
+                <h2>Hands-On: Importing Data</h2>
+                <p>Take a few minutes to import the data on your own.</p>
+            </section>
+            
+            <!-- Slide 7: Exploring Data for a Store: Step 2 -->
+            <section>
+                <h2>Exploring Data for a Store: Step 2</h2>
+                <pre><code>
+                df1 = df['Store_Name']
+                df1.head()
+                </code></pre>
+                <aside class="notes">
+                    In this step, we focus on a specific store and explore its data.
+                </aside>
+            </section>
+            
+            <!-- Slide 8: Hands-On: Data Exploration -->
+            <section>
+                <h2>Hands-On: Data Exploration</h2>
+                <p>Take a few minutes to explore the data on your own.</p>
+            </section>
+            
+            <!-- Slide 9: Introduction to Forecasting Models: Step 3 -->
+            <section>
+                <h2>Introduction to Forecasting Models: Step 3</h2>
+                <p>We'll be using Exponential Smoothing for this case study.</p>
+            </section>
+            
+            <!-- Slide 10: Implementing Exponential Smoothing: Step 4 -->
+            <section>
+                <h2>Implementing Exponential Smoothing: Step 4</h2>
+                <pre><code>
+                from statsmodels.tsa.api import ExponentialSmoothing
+                model = ExponentialSmoothing(df1, seasonal='add', seasonal_periods=7)
+                </code></pre>
+                <aside class="notes">
+                    Here we implement the Exponential Smoothing model.
+                </aside>
+            </section>
+            
+            <!-- Slide 11: Hands-On: Implementing Model -->
+            <section>
+                <h2>Hands-On: Implementing Model</h2>
+                <p>Take a few minutes to implement the model on your own.</p>
+            </section>
+            
+            <!-- Slide 12: Evaluating the Model: Step 5 -->
+            <section>
+                <h2>Evaluating the Model: Step 5</h2>
+                <pre><code>
+                # Evaluation metrics like MAE, MSE
+                </code></pre>
+                <aside class="notes">
+                    We evaluate the model using metrics like MAE and MSE.
+                </aside>
+            </section>
+            
+            <!-- Slide 13: Hands-On: Model Evaluation -->
+            <section>
+                <h2>Hands-On: Model Evaluation</h2>
+                <p>Take a few minutes to evaluate your model.</p>
+            </section>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            history: true,
+            slideNumber: true
+        });
+    </script>
+</body>
+
+</html>
