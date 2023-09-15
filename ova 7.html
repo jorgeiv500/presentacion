@@ -143,122 +143,99 @@
 					
 					<h3 style="opacity: 0.2; margin-top: 50px;">Análisis exploratorio de datos</h3>
 							
-							<p><span style="color:rgb(246, 244, 240)">OVA 1 Introducción al análisis exploratorio de datos</span> </p>
+							<p><span style="color:rgb(246, 244, 240)">OVA 7 Aprendizaje Automático con Python</span> </p>
 				</section>	
-				<section>
-					<h3>La ciencia de datos</h3>
-					<div class="row no-margin-top">
-						<div class="col-50">
-							<p class="fragment custom blur">Campo academico interdiciplinario que utiliza estadistica, computacion cientifica para obtener, tratar y realizar informes.</p>
-						
-						</div>
-						<div class="col-50 fig-container no-margin-top" data-file="plugin/reveal.js-d3-master/demo/d3-fig/eclipses.html">
-					</div>
-				  </div>
-				</section>
 				<section data-transition="fade">
-					<h1>Análisis de Datos con Pandas</h1>
+					<h1>Aprendizaje Automático con Python</h1>
 					</section>
 					
 					<section data-transition="slide">
 					<h2>Objetivos</h2>
 					<ul>
-					<li>Realizar análisis exploratorio con Pandas</li>
-					<li>Calcular estadísticas descriptivas</li>
-					<li>Visualizar y generar gráficos</li>
-					<li>Análisis de series de tiempo</li>  
+					<li>Algoritmos supervisados y no supervisados</li>
+					<li>Preprocesamiento y selección de características</li>
+					<li>Clasificación, regresión y clustering</li>
 					</ul>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Importar datos con Pandas</h2>
-					<pre><code class="python" data-trim>
-					import pandas as pd
-					
-					datos = pd.read_csv("datos.csv")
-					print(datos.head())
-					</code></pre>
+					<h2>Importancia del preprocesamiento</h2>  
+					<p>Estandarizar, normalizar y limpiar los datos antes de aplicar los modelos.</p>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Limpieza de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.dropna()
-					datos = datos.fillna(0)
-					datos = datos.drop_duplicates()
+					<h2>Selección de características relevantes</h2>
+					<p>Eliminar ruido y redundancia para mejorar rendimiento.</p>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Algoritmos supervisados y no supervisados</h2>
+					<p>Supervisados utilizan datos etiquetados, no supervisados encuentran patrones.</p>  
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Importar datos</h2>
+					<pre><code class="python">
+					import pandas as pd
+					from sklearn.model_selection import train_test_split
+					
+					df = pd.read_csv("data.csv")
+					X = df[["var1", "var2"]]
+					y = df["target"]
+					
+					X_train, X_test, y_train, y_test = train_test_split(X, y)
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Análisis descriptivo</h2>
-					<pre><code class="python" data-trim> 
-					datos.describe()
-					datos.mean()
-					datos.corr()
+					<h2>Preprocesamiento - Estandarización</h2>
+					<pre><code class="python">
+					from sklearn.preprocessing import StandardScaler
+					
+					scaler = StandardScaler()
+					X_train = scaler.fit_transform(X_train)
+					X_test = scaler.transform(X_test) 
 					</code></pre>  
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Selección de datos</h2>
-					<pre><code class="python" data-trim>
-					datos["columna"]
-					datos.loc[:, ["col1","col2"]]
-					datos[datos["columna"] > 0]
+					<h2>Selección de características</h2> 
+					<pre><code class="python">
+					from sklearn.feature_selection import SelectKBest
+					from sklearn.feature_selection import f_classif
+					
+					selector = SelectKBest(f_classif, k=3)
+					selector.fit(X, y)
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Agrupamiento y agregación</h2>
-					<pre><code class="python" data-trim>
-					datos.groupby("columna").mean()
-					datos.groupby(["col1", "col2"]).agg({"col3": "sum"}) 
-					datos.pivot_table(index="col1", values="col2", aggfunc="count")
+					<h2>Clasificación</h2>
+					<pre><code class="python">
+					from sklearn.ensemble import RandomForestClassifier
+					
+					model = RandomForestClassifier()
+					model.fit(X_train, y_train) 
 					</code></pre>
 					</section>
 					
-					<section data-transition="slide">
-					<h2>Unión y combinación</h2>
-					<pre><code class="python" data-trim>  
-					pd.concat([df1, df2])
-					df1.merge(df2, on="columna")
-					df1.join(df2, lsuffix="_izq") 
-					</code></pre>
-					</section>
+					<section data-transition="slide">  
+					<h2>Regresión</h2>
+					<pre><code class="python">
+					from sklearn.linear_model import LinearRegression
 					
-					<section data-transition="fade">
-					<h2>Visualización de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.plot()
-					datos.plot.bar()
-					datos["columna"].hist()
-					</code></pre>
-					</section>
-					
-					<section data-transition="slide">
-					<h2>Series de tiempo</h2>
-					<pre><code class="python" data-trim>
-					datos.resample("M").mean()
-					datos.rolling(12).mean() 
-					datos.shift(periods=3)
+					linreg = LinearRegression()
+					linreg.fit(X_train, y_train)
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Resumen</h2>
-					</section>  
+					<h2>Clustering</h2>
+					<pre><code class="python">
+					from sklearn.cluster import KMeans  
 					
-					<section data-transition="slide">
-					<h2>Autoevaluación</h2> 
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Referencias</h2>
-					</section>
-				
-    
-
-
-
+					kmeans = KMeans(n_clusters=3)
+					kmeans.fit
 
 
 

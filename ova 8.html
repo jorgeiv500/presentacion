@@ -145,118 +145,84 @@
 							
 							<p><span style="color:rgb(246, 244, 240)">OVA 1 Introducción al análisis exploratorio de datos</span> </p>
 				</section>	
-				<section>
-					<h3>La ciencia de datos</h3>
-					<div class="row no-margin-top">
-						<div class="col-50">
-							<p class="fragment custom blur">Campo academico interdiciplinario que utiliza estadistica, computacion cientifica para obtener, tratar y realizar informes.</p>
-						
-						</div>
-						<div class="col-50 fig-container no-margin-top" data-file="plugin/reveal.js-d3-master/demo/d3-fig/eclipses.html">
-					</div>
-				  </div>
-				</section>
 				<section data-transition="fade">
-					<h1>Análisis de Datos con Pandas</h1>
+					<h1>Redes Neuronales con Python</h1>
 					</section>
 					
 					<section data-transition="slide">
 					<h2>Objetivos</h2>
-					<ul>
-					<li>Realizar análisis exploratorio con Pandas</li>
-					<li>Calcular estadísticas descriptivas</li>
-					<li>Visualizar y generar gráficos</li>
-					<li>Análisis de series de tiempo</li>  
+					<ul>  
+					<li>Arquitectura de red neuronal</li>
+					<li>Perceptrón multicapa (MLP)</li>
+					<li>Entrenamiento supervisado</li>
 					</ul>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Importar datos con Pandas</h2>
-					<pre><code class="python" data-trim>
-					import pandas as pd
-					
-					datos = pd.read_csv("datos.csv")
-					print(datos.head())
-					</code></pre>
+					<h2>Neurona artificial</h2>
+					<p>Unidad de procesamiento que recibe inputs, los combina y aplica función de activación.</p> 
 					</section>
 					
-					<section data-transition="slide">
-					<h2>Limpieza de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.dropna()
-					datos = datos.fillna(0)
-					datos = datos.drop_duplicates()
-					</code></pre>
+					<section data-transition="slide">  
+					<h2>Arquitectura de red neuronal</h2>
+					<p>Capas de entrada, ocultas y salida interconectadas.</p>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Análisis descriptivo</h2>
-					<pre><code class="python" data-trim> 
-					datos.describe()
-					datos.mean()
-					datos.corr()
-					</code></pre>  
+					<h2>Perceptrón Multicapa (MLP)</h2>
+					<p>Red neuronal totalmente conectada, capaz de aprender representaciones complejas.</p>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Selección de datos</h2>
-					<pre><code class="python" data-trim>
-					datos["columna"]
-					datos.loc[:, ["col1","col2"]]
-					datos[datos["columna"] > 0]
+					<h2>Importar datos</h2>
+					<pre><code class="python">
+					# Código para importar datos
 					</code></pre>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Agrupamiento y agregación</h2>
-					<pre><code class="python" data-trim>
-					datos.groupby("columna").mean()
-					datos.groupby(["col1", "col2"]).agg({"col3": "sum"}) 
-					datos.pivot_table(index="col1", values="col2", aggfunc="count")
-					</code></pre>
-					</section>
-					
-					<section data-transition="slide">
-					<h2>Unión y combinación</h2>
-					<pre><code class="python" data-trim>  
-					pd.concat([df1, df2])
-					df1.merge(df2, on="columna")
-					df1.join(df2, lsuffix="_izq") 
-					</code></pre>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Visualización de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.plot()
-					datos.plot.bar()
-					datos["columna"].hist()
-					</code></pre>
-					</section>
-					
-					<section data-transition="slide">
-					<h2>Series de tiempo</h2>
-					<pre><code class="python" data-trim>
-					datos.resample("M").mean()
-					datos.rolling(12).mean() 
-					datos.shift(periods=3)
-					</code></pre>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Resumen</h2>
 					</section>  
 					
+					<section data-transition="fade">
+					<h2>Definir modelo</h2> 
+					<pre><code class="python">
+					# Código para definir modelo de red neuronal  
+					</code></pre>
+					</section>
+					
 					<section data-transition="slide">
-					<h2>Autoevaluación</h2> 
+					<h2>Entrenamiento</h2>
+					<pre><code class="python">
+					# Código para entrenar red neuronal
+					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Referencias</h2>
+					<h2>Predicción</h2>
+					<pre><code class="python">
+					# Código para realizar predicciones
+					</code></pre>
 					</section>
+					
+					<section data-transition="slide">  
+					<h2>Evaluación</h2>
+					<pre><code class="python">
+					# Código para evaluar predicciones
+					</code></pre> 
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Validación Cruzada</h2>
+					<pre><code class="python">
+					# Código para validación cruzada
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Optimización de hiperparámetros</h2>
+					<pre><code class="python">
+					# Código para optimizar hiperparámetros
+					</code></pre>
+					</section>
+					
 				
-    
-
 
 
 
