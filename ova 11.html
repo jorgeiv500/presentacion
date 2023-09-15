@@ -143,95 +143,73 @@
 					
 					<h3 style="opacity: 0.2; margin-top: 50px;">Análisis exploratorio de datos</h3>
 							
-							<p><span style="color:rgb(246, 244, 240)">OVA 5 Regresión Lineal con Python</span> </p>
+							<p><span style="color:rgb(246, 244, 240)">OVA 11 Machine Learning con PySpark y MLlib</span> </p>
 				</section>	
 				<section data-transition="fade">
-					<h1>Regresión Lineal con Python</h1>
+					<h1>Machine Learning con PySpark y MLlib</h1>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Objetivos</h2>
+					<h2>Objetivos</h2>  
 					<ul>
-					<li>Ajustar modelos de regresión lineal</li>
-					<li>Interpretar coeficientes</li>
-					<li>Evaluar bondad de ajuste</li>  
+					<li>Utilizar MLlib para entrenar modelos</li>
+					<li>Distribuir tareas con PySpark</li> 
+					<li>Evaluar y optimizar modelos</li>
 					</ul>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Mínimos Cuadrados Ordinarios</h2>
-					<p>Técnica para estimar coeficientes que minimizan la suma de cuadrados de los residuos.</p>
-					<p>Encuentra la línea que mejor se ajusta a los datos.</p>
+					<h2>Ventajas del ML distribuido</h2>
+					<p>Velocidad, escalabilidad, grandes volúmenes de datos.</p> 
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Importar datos</h2>
+					<h2>Importar datos con MLlib</h2>
 					<pre><code class="python">
-					import pandas as pd
+					from pyspark.ml import Pipeline
+					from pyspark.ml.classification import LogisticRegression 
 					
-					df = pd.read_csv("data.csv")
-					X = df[["x1","x2"]]
-					y = df["y"] 
+					# Leer datos
+					# Crear pipelines
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Ajuste del modelo</h2> 
-					<p>Utiliza la clase LinearRegression de sklearn para ajustar el modelo por MCO.</p>
+					<h2>Entrenar modelos</h2>
 					<pre><code class="python">
-					from sklearn.linear_model import LinearRegression
-					
-					model = LinearRegression()
-					model.fit(X, y)
-					</code></pre>
-					</section>
-					
-					<section data-transition="slide">  
-					<h2>Predicción</h2>
-					<p>Aplica el modelo ajustado para predecir la variable respuesta de nuevos datos.</p>
-					<pre><code class="python">
-					y_pred = model.predict(X_new)
-					</code></pre>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Coeficientes</h2>
-					<p>Obtiene el intercepto y coeficientes del modelo ajustado.</p>
-					<pre><code class="python"> 
-					print(model.intercept_)
-					print(model.coef_)
+					# Definir algoritmos
+					# Entrenar modelos
+					# Predecir
 					</code></pre>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Medidas de error</h2>
-					<p>MSE, RMSE, R^2 para evaluar distancia entre valores reales y predichos.</p>
-					<p>Residuos para analizar falta de ajuste.</p>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Bondad de ajuste</h2>
+					<h2>Evaluación y optimización</h2>
 					<pre><code class="python">  
-					from sklearn.metrics import r2_score
+					# Métricas de evaluación
+					# Validación cruzada
+					# Grid Search
+					</code></pre>
+					</section>
 					
-					r2 = r2_score(y, y_pred) 
+					<section data-transition="fade">
+					<h2>Persistencia de modelos</h2>
+					<pre><code class="python">
+					# Guardar y cargar modelos
 					</code></pre>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Regularización</h2>
-					<p>Ridge aplica penalización L2, útil para multicolinealidad.</p>  
-					<p>Lasso aplica penalización L1, realiza selección de variables.</p>
+					<h2>Resumen</h2>
 					</section>
 					
-					<section><h1>Ahora practiquemos:</h1></section>
-		   
-					<!-- Include a beautiful website directly in your presentation -->
-					<section class="fig-container"
-							 data-file="https://nbviewer.org/github/jorgeiv500/presentacion/blob/main/OVA_5.ipynb">
-						
+					<section data-transition="fade">
+					<h2>Autoevaluación</h2>
 					</section>
 					
+					<section data-transition="slide">
+					<h2>Referencias</h2>  
+					</section>
 
 
 

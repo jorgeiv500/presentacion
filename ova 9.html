@@ -143,123 +143,138 @@
 					
 					<h3 style="opacity: 0.2; margin-top: 50px;">Análisis exploratorio de datos</h3>
 							
-							<p><span style="color:rgb(246, 244, 240)">OVA 1 Introducción al análisis exploratorio de datos</span> </p>
+							<p><span style="color:rgb(246, 244, 240)">OVA 9 Aprendizaje Profundo con Python</span> </p>
 				</section>	
-				<section>
-					<h3>La ciencia de datos</h3>
-					<div class="row no-margin-top">
-						<div class="col-50">
-							<p class="fragment custom blur">Campo academico interdiciplinario que utiliza estadistica, computacion cientifica para obtener, tratar y realizar informes.</p>
-						
-						</div>
-						<div class="col-50 fig-container no-margin-top" data-file="plugin/reveal.js-d3-master/demo/d3-fig/eclipses.html">
-					</div>
-				  </div>
-				</section>
 				<section data-transition="fade">
-					<h1>Análisis de Datos con Pandas</h1>
+					<h1>Aprendizaje Profundo con Python</h1>
 					</section>
 					
 					<section data-transition="slide">
 					<h2>Objetivos</h2>
 					<ul>
-					<li>Realizar análisis exploratorio con Pandas</li>
-					<li>Calcular estadísticas descriptivas</li>
-					<li>Visualizar y generar gráficos</li>
-					<li>Análisis de series de tiempo</li>  
+					<li>Entender las Redes Neuronales Convolucionales (CNN)</li>
+					<li>Entender las Redes Neuronales Recurrentes (RNN)</li>
+					<li>Aprender sobre el entrenamiento de modelos profundos</li>  
 					</ul>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Importar datos con Pandas</h2>
-					<pre><code class="python" data-trim>
-					import pandas as pd
+					<h2>Redes Neuronales Convolucionales (CNN)</h2>
+					<p>Estas redes son especialmente útiles para procesar datos con estructura de grid como imágenes.</p>  
+					</section>
 					
-					datos = pd.read_csv("datos.csv")
-					print(datos.head())
-					</code></pre>
+					<section data-transition="fade"> 
+					<h2>¿Qué es una red neuronal convolucional?</h2>
+					<p>Es un tipo de red neuronal diseñada para procesar datos con estructura de grid, como imágenes.</p>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Limpieza de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.dropna()
-					datos = datos.fillna(0)
-					datos = datos.drop_duplicates()
+					<h2>Componentes de una CNN</h2>
+					<ul>
+						<li>Capas convolucionales: Aplican filtros para extraer características de los datos de entrada.</li> 
+						<li>Capas de agrupamiento (pooling): Reducen las dimensiones de las representaciones para disminuir parámetros.</li>  
+					</ul>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Flujo de información en CNNs</h2>
+					<p>Capas convolucionales > pooling > fully connected.</p>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Aplicaciones de CNNs</h2>
+					<p>Clasificación y segmentación de imágenes, reconocimiento de objetos, detección de anomalías.</p>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Redes Neuronales Recurrentes (RNN)</h2>
+					<p>Ideal para secuencias temporales como texto o audio.</p>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>¿Qué es una red neuronal recurrente?</h2>
+					<p>Una red que procesa secuencias temporales mediante loops de retroalimentación.</p>
+					</section>
+					
+					<section data-transition="fade">  
+					<h2>Tipos y características de RNN</h2>
+					<ul>
+						<li>Tipos: SimpleRNN, LSTM, GRU.</li> 
+						<li>Memoria en RNNs: Permite procesar contexto de secuencias largas.</li> 
+					</ul>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Aplicaciones de RNNs</h2>
+					<p>Procesamiento de lenguaje natural, reconocimiento de voz, pronóstico de series de tiempo.</p>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Limitaciones en el entrenamiento</h2>
+					<p>Desafíos tales como el gradiente desvaneciente y el sobre-ajuste.</p>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Importar datos</h2>
+					<pre><code class="python">
+					from tensorflow.keras.datasets import mnist
+					(X_train, y_train), (X_test, y_test) = mnist.load_data()
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Análisis descriptivo</h2>
-					<pre><code class="python" data-trim> 
-					datos.describe()
-					datos.mean()
-					datos.corr()
-					</code></pre>  
+					<h2>Definir modelo CNN</h2>  
+					<pre><code class="python">
+					from tensorflow.keras import Sequential
+					from tensorflow.keras.layers import Conv2D, MaxPool2D
+					
+					model = Sequential()
+					model.add(Conv2D(filters=32, kernel_size=3, activation='relu'))
+					model.add(MaxPool2D(pool_size=2)) 
+					</code></pre>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Selección de datos</h2>
-					<pre><code class="python" data-trim>
-					datos["columna"]
-					datos.loc[:, ["col1","col2"]]
-					datos[datos["columna"] > 0]
+					<h2>Definir modelo RNN</h2>
+					<pre><code class="python">
+					from tensorflow.keras.layers import SimpleRNN
+					
+					model = Sequential()
+					model.add(SimpleRNN(units=50, return_sequences=True)) 
+					model.add(SimpleRNN(units=50))
+					model.add(Dense(1))
 					</code></pre>
 					</section>
 					
 					<section data-transition="fade">
-					<h2>Agrupamiento y agregación</h2>
-					<pre><code class="python" data-trim>
-					datos.groupby("columna").mean()
-					datos.groupby(["col1", "col2"]).agg({"col3": "sum"}) 
-					datos.pivot_table(index="col1", values="col2", aggfunc="count")
+					<h2>Entrenamiento y optimización</h2>  
+					<pre><code class="python">  
+					model.compile(loss='categorical_crossentropy', 
+								  optimizer='adam',
+								  metrics=['accuracy'])
+					
+					model.fit(X_train, y_train, epochs=10)
 					</code></pre>
 					</section>
 					
 					<section data-transition="slide">
-					<h2>Unión y combinación</h2>
-					<pre><code class="python" data-trim>  
-					pd.concat([df1, df2])
-					df1.merge(df2, on="columna")
-					df1.join(df2, lsuffix="_izq") 
-					</code></pre>
+					<h2>Optimizadores y loss functions</h2>
+					<pre><code class="python">
+					model.compile(optimizer='rmsprop', loss='mse')
+					</code></pre> 
 					</section>
 					
-					<section data-transition="fade">
-					<h2>Visualización de datos</h2>
-					<pre><code class="python" data-trim>
-					datos.plot()
-					datos.plot.bar()
-					datos["columna"].hist()
-					</code></pre>
-					</section>
-					
-					<section data-transition="slide">
-					<h2>Series de tiempo</h2>
-					<pre><code class="python" data-trim>
-					datos.resample("M").mean()
-					datos.rolling(12).mean() 
-					datos.shift(periods=3)
-					</code></pre>
-					</section>
-					
-					<section data-transition="fade">
-					<h2>Resumen</h2>
-					</section>  
-					
-					<section data-transition="slide">
-					<h2>Autoevaluación</h2> 
+					<section<h2>Conclusión</h2>
+					<p>Las redes neuronales convolucionales y recurrentes son poderosas herramientas de aprendizaje profundo, cada una adecuada para diferentes tipos de estructuras de datos. A pesar de los desafíos en el entrenamiento, con la elección adecuada de funciones de pérdida y optimizadores, estos modelos pueden ser altamente efectivos para tareas como el procesamiento de imágenes y texto.</p>
 					</section>
 					
 					<section data-transition="fade">
 					<h2>Referencias</h2>
+					<ul>
+						<li>Chollet, François. Deep Learning with Python. Manning Publications, 2018.</li>
+						<li>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT press, 2016.</li>
+					</ul>
 					</section>
-				
-    
-
-
-
-
 
 
 			</div>
