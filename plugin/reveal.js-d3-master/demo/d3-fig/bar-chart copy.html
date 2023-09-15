@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.axisWhite line{
+  stroke: white;
+}
+
+.axisWhite path{
+  stroke: white;
+}
+
+.axisWhite text{
+  fill: white;
+} 
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<body>
+
+<div style="margin-bottom: 20px;">
+  <button onclick="renderMedia()">Media</button>
+  <button onclick="renderDispersion()">Dispersión</button>
+</div>
+
+<script>
+const dataMedia = [
+  {name: 'Alice', value: 45},
+  {name: 'Billy', value: 62},
+  {name: 'Cindy', value: 54},
+  {name: 'David', value: 85},
+  {name: 'Emily', value: 29}
+];
+
+const dataDispersion = [
+  {name: 'Alice', value: 15},
+  {name: 'Billy', value: 22},
+  {name: 'Cindy', value: 34},
+  {name: 'David', value: 45},
+  {name: 'Emily', value: 19}
+];
+
+const margin = { top: 10, right: 10, bottom: 30, left: 50 };
+const width = 600 - margin.left - margin.right;
+const height = 350 - margin.top - margin.bottom;
+
+const svg = d3.select('body')
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+const xScale = d3.scaleBand()
+  .domain(dataMedia.map(d => d.name))
+  .range([0, width])
+  .padding(0.2);
+svg
+  .append('g')
+    .attr('transform', `translate(0, ${height})`)
+    .attr("class", "axisWhite")
+  .call(d3.axisBottom(xScale))
+  .selectAll("text")
+      .style("text-anchor", "middle")
+      .style("font-size","2.2em")
+      .style("font-family", "Raleway")
+      .style("fill","white");
+
+const yScale = d3.scaleLinear()
+  .domain([0, 100])
+  .range([height, 0]);
+
+svg
+  .append('g')
+  .attr("class", "axisWhite")
+  .call(d3.axisLeft(yScale))
+  .selectAll("text")
+      .style("text-anchor", "right")
+      .style("font-size","1.5em")
+      .style("font-family", "Raleway")
+      .style("fill","white");
+
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+function renderMedia() {
+  render(dataMedia, 'Media');
+}
+
+function renderDispersion() {
+  render(dataDispersion, 'Dispersión');
+}
+
+function render(data, metric) {
+  const update = svg.selectAll('rect')
+    .data(data);
+
+  update.exit()
+    .remove();
+
+  update
+    .transition()
+    .duration(500)
+    .attr('y', d => yScale(d.value))
+    .attr('height', d => height - yScale(d.value));
+
+  update
+    .enter()
+    .append('rect')
+    .style('fill', '#9BE7FF')
+    .attr('x', d => xScale(d.name))
+    .attr('width', d => xScale.bandwidth())
+    .attr('y', d => yScale(d.value))
+    .attr('height', d => height - yScale(d.value))
+    .on("mouseover", function(event, d) {
+      tooltip.transition()
+        .duration(200)
+        .style("opacity", .9);
+      tooltip.html(d.name + "<br/>" + metric + ": " + d.value)
+        .style("left", (event.pageX) + "px")
+        .style("top", (event.pageY - 28) + "px");
+    })
+    .on("mouseout", function(d) {
+      tooltip.transition()
+        .duration(500)
+        .style("opacity", 0);
+    });
+}
+
+renderMedia();
+
+</script>
+</body>
+</html>

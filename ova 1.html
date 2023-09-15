@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Introducción a la Ciencia de Datos </title>
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+		.morado {
+				color: rgb(175, 31, 168);
+			}
+		.blanco {
+				color: rgb(255, 255, 255);
+			}
+		.verde {
+				color: rgb(31, 175, 31);
+			}
+
+		.rojo {
+				color: rgb(175, 38, 31);
+			}
+		.ramarillo {
+				color: rgb(175, 160, 0);
+			}
+		.v1 {
+				color: rgb(67, 44, 66);
+			}
+		.v2 {
+				color: rgb(113, 102, 96);
+			}
+
+		.v3 {
+				color: rgb(174, 145, 165);
+			}
+		.v4 {
+				color: rgb(rgb(174,145,165));
+			}
+		.skill {
+				color: rgb(12, 12, 206);
+			}
+		.fragment.blur {
+				filter: blur(5px);
+			}
+			.fragment.blur.visible {
+				filter: none;
+			}
+		.section {
+			position: relative;
+			width: 100%;
+			height: 90vh;
+			color: rgb(28, 28, 28);
+			}
+
+			.h3 {
+			margin-bottom: 10px;
+			}
+
+			.row {
+			display: flex;
+			flex-direction: row;
+			}
+
+			.col-50 {
+			width: 50%;
+			padding: 20px;
+			}
+
+			.no-margin-top {
+			margin-top: 0;
+			}
+
+			.fig-container {
+			width: 50%;
+			padding: 20px;
+			
+			}
+
+			
+
+			.small {
+			font-size: 0.8em;
+			}
+
+			a {
+			color: #FFDD00; /* Puedes cambiar esto según lo necesites */
+			}
+		.floating-button {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background-color: #f1f1f1;
+			position: fixed;
+			bottom: 20px;
+			left: 20px; /* Cambiado de right a left */
+			border: none;
+			outline: none;
+			cursor: pointer;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s;
+		}
+
+		.floating-button:hover {
+			transform: translateY(-10px);
+		}
+
+		.floating-button img {
+			width: 60px;
+			height: 40px;
+			margin: -10px;
+		}
+
+
+		</style>
+		
+	</head>
+
+	<body>   
+		<div class="reveal">
+			
+			<div id="header">
+				<div class="header-left">  <p style="font-size:25%;"> Introducción a la Ciencia de Datos| 
+			   <a href="https://www.utadeo.edu.co/es/"> UJTL</a></p> </div>
+			</div>
+		
+			<div class="slides">
+				<section data-auto-animate data-auto-animate-unmatched="fade" data-background="#003865">
+					<a href="https://www.utadeo.edu.co">
+						<img src="https://www.utadeo.edu.co/sites/tadeo/themes/seed_tadeo/images/micrositios/new_logo_utadeo.png" 
+						alt="logo" style="height: 100px;  " class="demo-logo">
+					</a>
+					<h3>Análisis exploratorio de datos</h3>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade" data-background="#003865">
+					<a href="https://www.utadeo.edu.co">
+						<img src="https://www.utadeo.edu.co/sites/tadeo/themes/seed_tadeo/images/micrositios/new_logo_utadeo.png" 
+						alt="logo" style="height: 100px;  " class="demo-logo">
+					</a>
+					
+					<h3 style="opacity: 0.2; margin-top: 50px;">Análisis exploratorio de datos</h3>
+							
+							<p><span style="color:rgb(246, 244, 240)">OVA 1 Introducción al análisis exploratorio de datos</span> </p>
+				</section>	
+				
+					
+					<section data-transition="slide" data-background="#003865">
+					<h2>Objetivos</h2>
+					<ul>
+					<li>Comprender conceptos básicos de EDA</li>
+					<li>Aprender estadística descriptiva</li>
+					<li>Visualizar y resumir datos</li>
+					<li>Realizar EDA en Python</li>
+					</ul>
+					</section>
+					
+					
+					<section class="fig-container" 
+      			   data-file="plugin/reveal.js-d3-master/demo/d3-fig/collision-detection.html" style="overflow: visible">
+  					 <h3>¿Qué es EDA?</h3>
+    				<p class="fragment fade-up">Proceso para examinar, limpiar y analizar datos.</p>
+					<p class="fragment fade-up">Permite encontrar patrones y entender los datos.</p>
+					</section>
+
+					
+					<section data-transition="slide">
+					<h2>Etapas del EDA</h2>
+					<p class="fragment fade-right">Recolección</p>
+					<p class="fragment fade-left">Limpieza</p> 
+					<p class="fragment fade-right">Análisis</p>
+					<p class="fragment fade-left">Visualización</p>
+					<p class="fragment fade-right">Derivación de insights</p>
+					</section>
+					
+					
+					<section data-transition="fade">
+						<h2>Estadística descriptiva</h2>
+						<p>Resumen numérico de los datos:</p>
+						<div class="fragment fade-right" data-tooltip="Medidas de posición central">
+						  <img src="media.png" width="250"> 
+						</div>
+						<div class="fragment fade-left" data-tooltip="Medidas de dispersión">
+						  <img src="desviacion.png" width="250">
+						</div>
+					  </section>
+					  
+					
+					<section data-transition="slide">
+					<h2>Medidas de tendencia central</h2>  
+					<p class="fragment fade-up">Media</p>
+					<p class="fragment fade-down">Mediana</p>
+					<p class="fragment fade-up">Moda</p>
+					<img class="fragment fade-in" src="central.png" width="300">
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Medidas de dispersión</h2>
+					<p class="fragment fade-right">Rango</p>
+					<p class="fragment fade-left">Desviación estándar</p> 
+					<p class="fragment fade-right">Varianza</p>
+					<img class="fragment fade-in" src="dispersion.png" width="300">
+					</section>
+					
+					<section data-transition="slide">  
+					<h2>Visualización de datos</h2>
+					<p>Permite detectar tendencias y outliers.</p>
+					<div class="fragment fade-right" data-tooltip="Histograma">
+					<img src="hist.png" width="250">
+					</div>
+					<div class="fragment fade-left" data-tooltip="Diagrama de dispersión">
+					<img src="scatter.png" width="250"> 
+					</div>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Histogramas</h2>
+					<p>Muestran la distribución de frecuencias.</p>
+					<img class="fragment fade-in" src="hist2.png" width="400">
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Diagramas de dispersión</h2>  
+					<p>Muestran relación entre dos variables.</p>
+					<img class="fragment fade-in" src="scatter2.png" width="400">
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Python para EDA</h2>
+					<p>Principales librerías:</p>
+					<div class="fragment fade-up">NumPy</div>
+					<div class="fragment fade-down">Pandas</div> 
+					<div class="fragment fade-up">Matplotlib</div>
+					<div class="fragment fade-down">Seaborn</div>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Importar datos</h2>
+					<pre><code class="python fragment fade-in" data-trim>
+					import pandas as pd
+					
+					datos = pd.read_csv("data.csv")
+					</code></pre>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Limpieza de datos</h2>
+					<pre><code class="python fragment fade-in" data-trim>
+					import numpy as np
+					
+					datos.dropna() 
+					datos = datos[datos["x"] > 0]
+					datos["y"].replace(-999, np.nan)
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Análisis y visualización</h2>  
+					<pre><code class="python fragment fade-in" data-trim>
+					datos.describe()
+					
+					import matplotlib.pyplot as plt
+					plt.hist(datos["x"])
+					plt.boxplot(datos)
+					</code></pre> 
+					</section>
+					
+				
+				
+				<section>
+				
+					<h2>Objetivos del análisis exploratorio de datos</h2>
+					
+						<p>El EDA es un componente crucial en la ciencia de datos porque permite a los analistas obtener insights iniciales y entender el patrón de los datos. El EDA es un componente crucial en cualquier proyecto de ciencia de datos por varias razones:</span></p>
+					
+				
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out verde" style="background: #020202" ><strong>Comprensión del Problema:</strong> Ayuda a entender mejor el problema que se está tratando de resolver.</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202" ><strong>Calidad de Datos</strong>: Permite identificar la calidad de los datos y si es necesario realizar alguna limpieza o transformación.</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202" ><strong>Selección de Variables:</strong> Facilita la selección de las variables que serán útiles para el modelado.</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202" ><strong>Desarrollo de Hipótesis: </strong>Proporciona una base sólida para el desarrollo de hipótesis para pruebas estadísticas más avanzadas.</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202" ><strong>Mejor Comunicación:</strong> Los gráficos y tablas generados durante el EDA facilitan la comunicación de los hallazgos a las partes interesadas.</p>
+										
+					</div>
+					</section>
+				
+
+				<section data-background-transition="slide" data-background="wall.png">
+					
+						<p style="color:#f1f1f1">Un científico de datos debe ser capaz de:</span></p>
+				
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">ejecutar una regresión</p>
+
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">ejecutar una regresión</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">escribir una consulta SQL</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">hacer scraping de un sitio web</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">diseñar un experimento</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">factorizar matrices</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">usar un marco de datos</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">pretender entender aprendizaje profundo</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">graficar problemas complejas</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">discutir R contra Python</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">construir un tablero</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">limpiar datos desordenados</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">probar una hipótesis</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">hablar con un empresario</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">escribir un script de shell</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">programar en una pizarra</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">hackear un p-valor</p>
+						<p class="fragment fade-in-then-out verde" style="background: #020202; line-height: 1em; letter-spacing: 0em; font-family: 'Courier New', monospace;">aplicar aprendizaje automático a un modelo</p>
+
+										
+					</div>
+				</section>
+				<section><h1>Ahora practiquemos:</h1></section>
+		   
+<!-- Include a beautiful website directly in your presentation -->
+<section class="fig-container"
+         data-file="https://drive.google.com/file/d/1v1vHFqnctfbsKC-XtDMw4JvGRuTLAGF_/view?usp=sharing">
+    <div style="width: 50%; margin-left: 45% !important; background-color: #777777; font-size: 0.75em; border-radius: 20px;">
+        Embed websites in the background too
+    </p>
+</section>
+
+
+
+
+			</div>
+		</div>
+
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+      	<script src="plugin/chalkboard/plugin.js"></script>
+	    <script src="plugin/customcontrols/plugin.js"></script>
+	    <script src="plugin/math/math.js"></script>
+	    <script src="plugin/embed-tweet/plugin.js"></script>
+	    <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="plugin/chart/plugin.js"></script>
+		<script src="plugin/embed-tweet/plugin.js"></script>
+		<script type="text/javascript" src="https://www.tecnivoro.com/wp-includes/js/wp-embed.min.js?ver=5.8.1" id="wp-embed-js"></script>
+		<script src="plugin/reveal.js-d3-master/reveald3.js"></script>
+
+
+
+<script>
+
+
+Reveal.initialize({
+    plugins: [ Reveald3, RevealMath, RevealMarkdown, RevealHighlight, RevealNotes,RevealCustomControls,RevealChart,RevealEmbedTweet],
+    controls: false,
+    transition: 'fade',
+    viewDistance: 3, // to lazy load iframes
+	chart: {
+		defaults: {
+			color: 'black', // color of labels
+			scale: {
+				beginAtZero: true,
+				ticks: { stepSize: 1 },
+				grid: { color: "lightgray" } , // color of grid lines
+			},
+		},
+	line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+	bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+	pie: { backgroundColor: [ ["#A4036F" , "#048BA8", "#16DB93", "#EFEA5A", "#F29E4C"] ]},
+		},
+	hash: true,slideNumber: 'c/t',
+	customcontrols: {
+		slideNumberCSS : 'position: fixed; display: block; right: 90px; top: auto; left: auto; width: 50px; bottom: 30px; z-index: 31; font-family: Helvetica, sans-serif; font-size:  12px; line-height: 1; padding: 5px; text-align: center; border-radius: 10px; background-color: rgba(128,128,128,.5)',
+		controls: [
+			{ icon: '<i class="fa fa-caret-left"></i>',
+			  css: 'position: fixed; right: 60px; bottom: 30px; z-index: 30; font-size: 24px;',
+			  action: 'Reveal.prev(); return false;'
+			},
+			{ icon: '<i class="fa fa-caret-right"></i>',
+			  css: 'position: fixed; right: 30px; bottom: 30px; z-index: 30; font-size: 24px;',
+			  action: 'Reveal.next(); return false;'
+			}
+		]
+	},
+	math: {
+		mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+		config: 'TeX-AMS_HTML-full',
+      // pass other options into `MathJax.Hub.Config()`
+	  TeX: { Macros: { RR: "{\\bf R}" } }
+    },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+	plugins: [Reveald3, RevealMath, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard,RevealCustomControls,RevealChart,RevealEmbedTweet]});
+	Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+	Reveal.configure({ pdfSeparateFragments: false });
+	var $ = go.GraphObject.make;
+</script>
+<button class="floating-button" onclick="window.open('https://colab.research.google.com/')">
+	<img src="colab.png" alt="Google Colab Logo">
+</button>
+  
+			
+	</body>
+</html>

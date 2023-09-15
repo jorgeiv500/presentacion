@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Introducción a la Ciencia de Datos </title>
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+		.morado {
+				color: rgb(175, 31, 168);
+			}
+		.blanco {
+				color: rgb(255, 255, 255);
+			}
+		.verde {
+				color: rgb(31, 175, 31);
+			}
+
+		.rojo {
+				color: rgb(175, 38, 31);
+			}
+		.ramarillo {
+				color: rgb(175, 160, 0);
+			}
+		.v1 {
+				color: rgb(67, 44, 66);
+			}
+		.v2 {
+				color: rgb(113, 102, 96);
+			}
+
+		.v3 {
+				color: rgb(174, 145, 165);
+			}
+		.v4 {
+				color: rgb(rgb(174,145,165));
+			}
+		.skill {
+				color: rgb(12, 12, 206);
+			}
+		.fragment.blur {
+				filter: blur(5px);
+			}
+			.fragment.blur.visible {
+				filter: none;
+			}
+		.section {
+			position: relative;
+			width: 100%;
+			height: 90vh;
+			color: rgb(28, 28, 28);
+			}
+
+			.h3 {
+			margin-bottom: 10px;
+			}
+
+			.row {
+			display: flex;
+			flex-direction: row;
+			}
+
+			.col-50 {
+			width: 50%;
+			padding: 20px;
+			}
+
+			.no-margin-top {
+			margin-top: 0;
+			}
+
+			.fig-container {
+			width: 50%;
+			padding: 20px;
+			
+			}
+
+			
+
+			.small {
+			font-size: 0.8em;
+			}
+
+			a {
+			color: #FFDD00; /* Puedes cambiar esto según lo necesites */
+			}
+		.floating-button {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background-color: #f1f1f1;
+			position: fixed;
+			bottom: 20px;
+			left: 20px; /* Cambiado de right a left */
+			border: none;
+			outline: none;
+			cursor: pointer;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s;
+		}
+
+		.floating-button:hover {
+			transform: translateY(-10px);
+		}
+
+		.floating-button img {
+			width: 60px;
+			height: 40px;
+			margin: -10px;
+		}
+
+
+		</style>
+		
+	</head>
+
+	<body>   
+		<div class="reveal">
+			
+			<div id="header">
+				<div class="header-left">  <p style="font-size:25%;"> Introducción a la Ciencia de Datos| 
+			   <a href="https://www.utadeo.edu.co/es/"> UJTL</a></p> </div>
+			</div>
+		
+			<div class="slides">
+				<section data-auto-animate data-auto-animate-unmatched="fade" data-background="#003865">
+					<a href="https://www.utadeo.edu.co">
+						<img src="https://www.utadeo.edu.co/sites/tadeo/themes/seed_tadeo/images/micrositios/new_logo_utadeo.png" 
+						alt="logo" style="height: 100px;  " class="demo-logo">
+					</a>
+					<h3>Análisis exploratorio de datos</h3>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade" data-background="#003865">
+					<a href="https://www.utadeo.edu.co">
+						<img src="https://www.utadeo.edu.co/sites/tadeo/themes/seed_tadeo/images/micrositios/new_logo_utadeo.png" 
+						alt="logo" style="height: 100px;  " class="demo-logo">
+					</a>
+					
+					<h3 style="opacity: 0.2; margin-top: 50px;">Análisis exploratorio de datos</h3>
+							
+							<p><span style="color:rgb(246, 244, 240)">OVA 1 Introducción al análisis exploratorio de datos</span> </p>
+				</section>	
+				<section data-transition="fade">
+					<h1>Manipulación de Datos con Python</h1>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Objetivos</h2>
+					<ul>
+					<li>Leer y escribir archivos de datos</li>
+					<li>Seleccionar, ordenar y transformar datos</li>  
+					<li>Agrupar y combinar datos</li>
+					<li>Ejemplos prácticos de manipulación</li>
+					</ul>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Bibliotecas principales</h2>
+					<ul>
+					<li>Pandas para datos estructurados</li>
+					<li>NumPy para arrays numéricos</li>
+					<li>OS para archivos del sistema</li>
+					</ul>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Lectura de archivos CSV</h2>  
+					<pre><code class="python" data-trim>
+					import pandas as pd
+					
+					datos = pd.read_csv("datos.csv")
+					print(datos.head())
+					</code></pre> 
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Lectura de Excel</h2>
+					<pre><code class="python" data-trim>
+					import pandas as pd
+					
+					datos = pd.read_excel("datos.xlsx")
+					print(datos.shape) 
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Escritura de archivos</h2>
+					<pre><code class="python" data-trim>  
+					datos.to_csv("salida.csv")
+					datos.to_excel("salida.xlsx")
+					
+					with open("salida.txt", "w") as f:
+						f.write(datos.to_string())
+					</code></pre>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Selección de datos</h2>
+					<pre><code class="python" data-trim>
+					# Por índice
+					datos.loc[0]   
+					
+					# Por condición
+					seleccion = datos[datos["x"] > 0] 
+					
+					# Aleatoriamente
+					muestra = datos.sample(10)
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Ordenamiento</h2>
+					<pre><code class="python" data-trim>
+					# Ordenar valores
+					ord_datos = datos.sort_values("x")  
+					
+					# Ordenar índices
+					ind_ord = datos.sort_index() 
+					</code></pre>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Agrupamiento</h2>
+					<pre><code class="python" data-trim>
+					# Agrupar y agregar  
+					agrupado = datos.groupby("grupo").agg({"x": "mean"})
+					
+					# Aplicar función  
+					datos.groupby("grupo").apply(funcion)
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Combinar datos</h2>
+					<pre><code class="python" data-trim>
+					# Unir por índice
+					combinado = pd.concat([df1, df2])
+					
+					# Unir por columna  
+					combinado = df1.join(df2, on="id")
+					</code></pre>
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Transformación de datos</h2>
+					<pre><code class="python" data-trim>
+					# Remover NA
+					datos.dropna()
+					
+					# Rellenar NA  
+					datos.fillna(0)
+					
+					# Aplicar función
+					datos["x"].apply(funcion)
+					</code></pre>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Resumen</h2>
+					<p>Herramientas en Python para manipular datos.</p> 
+					</section>
+					
+					<section data-transition="fade">
+					<h2>Autoevaluación</h2>
+					</section>
+					
+					<section data-transition="slide">
+					<h2>Referencias</h2>
+					</section>
+			</div>
+		</div>
+
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+      	<script src="plugin/chalkboard/plugin.js"></script>
+	    <script src="plugin/customcontrols/plugin.js"></script>
+	    <script src="plugin/math/math.js"></script>
+	    <script src="plugin/embed-tweet/plugin.js"></script>
+	    <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+		<script src="plugin/chart/plugin.js"></script>
+		<script src="plugin/embed-tweet/plugin.js"></script>
+		<script type="text/javascript" src="https://www.tecnivoro.com/wp-includes/js/wp-embed.min.js?ver=5.8.1" id="wp-embed-js"></script>
+		<script src="plugin/reveal.js-d3-master/reveald3.js"></script>
+
+
+
+<script>
+
+
+Reveal.initialize({
+    plugins: [ Reveald3, RevealMath, RevealMarkdown, RevealHighlight, RevealNotes,RevealCustomControls,RevealChart,RevealEmbedTweet],
+    controls: false,
+    transition: 'fade',
+    viewDistance: 3, // to lazy load iframes
+	chart: {
+		defaults: {
+			color: 'black', // color of labels
+			scale: {
+				beginAtZero: true,
+				ticks: { stepSize: 1 },
+				grid: { color: "lightgray" } , // color of grid lines
+			},
+		},
+	line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] },
+	bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+	pie: { backgroundColor: [ ["#A4036F" , "#048BA8", "#16DB93", "#EFEA5A", "#F29E4C"] ]},
+		},
+	hash: true,slideNumber: 'c/t',
+	customcontrols: {
+		slideNumberCSS : 'position: fixed; display: block; right: 90px; top: auto; left: auto; width: 50px; bottom: 30px; z-index: 31; font-family: Helvetica, sans-serif; font-size:  12px; line-height: 1; padding: 5px; text-align: center; border-radius: 10px; background-color: rgba(128,128,128,.5)',
+		controls: [
+			{ icon: '<i class="fa fa-caret-left"></i>',
+			  css: 'position: fixed; right: 60px; bottom: 30px; z-index: 30; font-size: 24px;',
+			  action: 'Reveal.prev(); return false;'
+			},
+			{ icon: '<i class="fa fa-caret-right"></i>',
+			  css: 'position: fixed; right: 30px; bottom: 30px; z-index: 30; font-size: 24px;',
+			  action: 'Reveal.next(); return false;'
+			}
+		]
+	},
+	math: {
+		mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+		config: 'TeX-AMS_HTML-full',
+      // pass other options into `MathJax.Hub.Config()`
+	  TeX: { Macros: { RR: "{\\bf R}" } }
+    },
+
+				// Learn about plugins: https://revealjs.com/plugins/
+	plugins: [Reveald3, RevealMath, RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard,RevealCustomControls,RevealChart,RevealEmbedTweet]});
+	Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+	Reveal.configure({ pdfSeparateFragments: false });
+	var $ = go.GraphObject.make;
+</script>
+<button class="floating-button" onclick="window.open('https://colab.research.google.com/')">
+	<img src="colab.png" alt="Google Colab Logo">
+</button>
+  
+			
+	</body>
+</html>
