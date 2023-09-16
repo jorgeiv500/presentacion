@@ -133,7 +133,7 @@
 						<img src="https://www.utadeo.edu.co/sites/tadeo/themes/seed_tadeo/images/micrositios/new_logo_utadeo.png" 
 						alt="logo" style="height: 100px;  " class="demo-logo">
 					</a>
-					<h3>planeacion y control de la produccion</h3>
+					<h3>Logistica de inventarios</h3>
 				</section>
 				<section data-auto-animate data-auto-animate-unmatched="fade" data-background="#003865">
 					<a href="https://www.utadeo.edu.co">
@@ -141,337 +141,310 @@
 						alt="logo" style="height: 100px;  " class="demo-logo">
 					</a>
 					
-					<h3 style="opacity: 0.2; margin-top: 50px;">planeacion y control de la produccion</h3>
+					<h3 style="opacity: 0.2; margin-top: 50px;">Logistica de inventarios</h3>
 							
-							<p><span style="color:rgb(246, 244, 240)">mrp a jit</span> </p>
+							<p><span style="color:rgb(246, 244, 240)">de eoq a rop</span> </p>
 				</section>	
 				
-					
+				<section>
+					<h1>Gestión de Inventarios: Desde EOQ hasta ROP</h1>
+					<h2>Objetivos de Aprendizaje</h2>
+					<ul>
+						<li>Comprender los conceptos clave de la gestión de inventarios</li>
+						<li>Aplicar fórmulas para calcular EOQ y ROP</li>
+						<li>Identificar los beneficios y limitaciones de EOQ y ROP</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Introducción a la Gestión de Inventarios</h2>
+					<p>La gestión de inventarios se refiere al proceso de ordenar, almacenar y utilizar el inventario de una empresa, que incluye tanto las materias primas como los productos terminados.</p>
+				</section>
+				<section>
+					<h2>Costos Relevantes en la Gestión de Inventarios</h2>
+					<ul>
+						<li>Costo de ordenar</li>
+						<li>Costo de mantenimiento</li>
+						<li>Costo de adquisición</li>
+						<li>Costo de stockout (falta de stock)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Cantidad Económica de Pedido (EOQ)</h2>
+					<p>La fórmula para calcular el EOQ es:</p>
+					\[
+					EOQ = \sqrt{\frac{2DS}{H}}
+					\]
+					<p>Donde:</p>
+					<ul>
+						<li>\(D\) = Demanda anual</li>
+						<li>\(S\) = Costo de ordenar</li>
+						<li>\(H\) = Costo de mantener</li>
+					</ul>
+					<aside class="notes">
+						Ejemplo numérico: Supongamos que \(D = 1200\, \text{unidades}\), \(S = 100\, \text{USD}\) y \(H = 2\, \text{USD/unidad}\). Sustituyendo estos valores en la fórmula, encontramos que \(EOQ \approx 100\, \text{unidades}\).
+					</aside>
+				</section>
+				<section>
+					<h2>Código para la Gráfica de EOQ</h2>
+					<pre><code data-trim data-noescape class="python">
+					import matplotlib.pyplot as plt
+					import numpy as np
 				
-					  <section>
-						<h1>Agenda Maestra de Producción, MPS, MRP y JIT</h1>
-					  </section>
-					  <section>
-						<h2>Objetivo de aprendizaje:</h2>
-						<p>Al finalizar este OVA, el estudiante será capaz de distinguir y aplicar los conceptos de agenda maestra de producción, planificación de necesidades de materiales (MPS), planificación de requerimientos de materiales (MRP) y justo a tiempo (JIT) para la gestión eficiente de la producción.</p>
-					  </section>
-					  <section>
-						<h2>Definición de agenda maestra de producción:</h2>
-						<p>La agenda maestra de producción es un programa que especifica la cantidad de cada producto final que se va a fabricar en cada período de tiempo (normalmente semanas) durante un horizonte de planificación. Sirve como guía para planificar los materiales y capacidades necesarios.</p>
-						<h3>Objetivos de la agenda maestra:</h3>
-						<ul>
-						  <li>Suavizar fluctuaciones estacionales de la demanda</li>
-						  <li>Optimizar la utilización de recursos y capacidad de producción</li>
-						  <li>Coordinar inventarios, compras y producción</li>
-						</ul>
-					  </section>
-					  <section>
-						<h2>Ejemplo gráfico de una agenda maestra de producción:</h2>
-						<table>
-						  <thead>
-							<tr>
-							  <th>Semana</th>
-							  <th>Producto A</th>
-							  <th>Producto B</th>
-							  <th>Producto C</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <td>1</td>
-							  <td>100</td>
-							  <td>50</td>
-							  <td>200</td>
-							</tr>
-							<tr>
-							  <td>2</td>
-							  <td>150</td>
-							  <td>60</td>
-							  <td>220</td>
-							</tr>
-							<tr>
-							  <td>3</td>
-							  <td>130</td>
-							  <td>55</td>
-							  <td>210</td>
-							</tr>
-							<tr>
-							  <td>4</td>
-							  <td>120</td>
-							  <td>70</td>
-							  <td>230</td>
-							</tr>
-						  </tbody>
-						</table>
-					  </section>
-					  <!-- Add the rest of your slides here -->
-				<!-- Diapositiva 5 -->
-<section>
-	<h2>Planificación de Necesidades de Materiales (MPS):</h2>
-	<p>El MPS es una técnica de planificación de producción que convierte la agenda maestra de producción en una lista detallada de necesidades de materiales y producción específicos por periodos de tiempo.</p>
-  </section>
-  
-  <!-- Diapositiva 6 -->
-  <section>
-	<h2>Objetivos del MPS:</h2>
-	<ul>
-	  <li>Coordinar las actividades de producción</li>
-	  <li>Planificar la cantidad y el momento de la producción</li>
-	  <li>Planificar la adquisición de materiales</li>
-	</ul>
-  </section>
-  
-  <!-- Diapositiva 7 -->
-  <section>
-	<h2>Definición de MPS:</h2>
-	<p>El MPS es un plan de producción detallado que establece la cantidad de cada producto que se producirá en cada período de tiempo.</p>
-  </section>
-  
-  <!-- Diapositiva 8 -->
-  <section>
-	<h2>Ejemplo numérico de un MPS:</h2>
-	<table>
-	  <thead>
-		<tr>
-		  <th>Semana</th>
-		  <th>Producto A</th>
-		  <th>Producto B</th>
-		  <th>Producto C</th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr>
-		  <td>1</td>
-		  <td>100</td>
-		  <td>75</td>
-		  <td>300</td>
-		</tr>
-		<tr>
-		  <td>2</td>
-		  <td>175</td>
-		  <td>90</td>
-		  <td>350</td>
-		</tr>
-		<tr>
-		  <td>3</td>
-		  <td>160</td>
-		  <td>85</td>
-		  <td>330</td>
-		</tr>
-		<tr>
-		  <td>4</td>
-		  <td>150</td>
-		  <td>100</td>
-		  <td>370</td>
-		</tr>
-	  </tbody>
-	</table>
-  </section>
-  
-  <!-- Diapositiva 9 -->
-  <section>
-	<h2>Planificación de Requerimientos de Materiales (MRP):</h2>
-	<p>El MRP es un sistema para calcular las necesidades de materiales y los tiempos en que se necesitan, basándose en el plan de producción (MPS), las listas de materiales (BOM) y los registros de inventario.</p>
-  </section>
-  
-  <!-- Diapositiva 10 -->
-  <section>
-	<h2>Objetivos del MRP:</h2>
-	<ul>
-	  <li>Mantener los niveles de inventario lo más bajos posible</li>
-	  <li>Planificar las actividades de fabricación, entrega y compra</li>
-	  <li>Planificar la capacidad de producción necesaria para completar las actividades de fabricación a tiempo</li>
-	</ul>
-  </section>
-  
-  <!-- Diapositiva 11 -->
-  <section>
-	<h2>Definición de MRP:</h2>
-	<p>El MRP es un sistema de control de inventario y producción que utiliza listas de materiales, inventario y la agenda maestra para calcular las necesidades de materiales y los tiempos en que se necesitan.</p>
-  </section>
-  
-  <!-- Diapositiva 12 -->
-  <section>
-	<h2>Ejemplo numérico de un MRP:</h2>
-	<table>
-	  <thead>
-		<tr>
-		  <th>Semana</th>
-		  <th>Materia Prima 1</th>
-		  <th>Materia Prima 2</th>
-		  <th>Producto Intermedio</th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr>
-		  <td>1</td>
-		  <td>300</td>
-		  <td>150</td>
-		  <td>250</td>
-		</tr>
-		<tr>
-		  <td>2</td>
-		  <td>350</td>
-		  <td>180</td>
-		  <td>300</td>
-		</tr>
-		<tr>
-		  <td>3</td>
-		  <td>320</td>
-		  <td>170</td        <td>280</td>
-		</tr>
-		<tr>
-		  <td>4</td>
-		  <td>300</td>
-		  <td>200</td>
-		  <td>310</td>
-		</tr>
-	  </tbody>
-	</table>
-  </section>
-  
-  <!-- Diapositiva 13 -->
-  <section>
-	<h2>Justo a Tiempo (JIT):</h2>
-	<p>El JIT es una estrategia de gestión de inventario que se esfuerza por mejorar la eficiencia de una empresa y reducir los desechos al recibir bienes solo cuando se necesitan en el proceso de producción, reduciendo así los costos de inventario.</p>
-  </section>
-  
-  <!-- Diapositiva 14 -->
-  <section>
-	<h2>Objetivos del JIT:</h2>
-	<ul>
-	  <li>Eliminar el desperdicio</li>
-	  <li>Reducir el tiempo de espera</li>
-	  <li>Reducir los niveles de inventario</li>
-	  <li>Mejorar la eficiencia de los procesos</li>
-	</ul>
-  </section>
-  
-  <!-- Diapositiva 15 -->
-  <section>
-	<h2>Definición de JIT:</h2>
-	<p>El JIT es una estrategia de producción que se esfuerza por mejorar la eficiencia y la calidad de una empresa al producir y recibir bienes justo cuando se necesitan en el proceso de producción.</p>
-  </section>
-
-  <section>
-    <h1>Introducción a la Planificación de Requerimientos de Materiales (MRP)</h1>
-    <p>Una guía para entender y aplicar la MRP con Python y Pyomo</p>
-</section>
-
-<section>
-    <h2>¿Qué es MRP?</h2>
-    <p>La Planificación de Requerimientos de Materiales (MRP) es un sistema para gestionar y planificar las operaciones de producción y los inventarios en una empresa.</p>
-</section>
-
-<section>
-    <h2>Conceptos Clave en MRP</h2>
-    <ul>
-        <li><strong>Demandas:</strong> La cantidad de producto requerida.</li>
-        <li><strong>Ofertas:</strong> La cantidad de producto disponible.</li>
-        <li><strong>Restricciones:</strong> Las limitaciones en el proceso de producción.</li>
-        <li><strong>Función objetivo:</strong> El objetivo que se busca alcanzar a través de la optimización, en este caso, minimizar el costo.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Métodos de Solución para MRP</h2>
-    <ul>
-        <li><strong>Programación lineal:</strong> Un enfoque matemático para optimizar una función objetivo bajo ciertas restricciones.</li>
-        <li><strong>Heurísticas:</strong> Estrategias basadas en reglas prácticas para encontrar soluciones aceptables en problemas complejos.</li>
-        <li><strong>Algoritmos genéticos:</strong> Técnicas basadas en la selección natural para encontrar soluciones óptimas.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Aplicación con Python y Pyomo</h2>
-    <p>Python es un lenguaje de programación potente y Pyomo permite modelar problemas de optimización de una manera sencilla.</p>
-</section>
-
-<section>
-    <h2>Fragmento 1: Importar Librerías</h2>
-    <pre><code class="python">
-from pyomo.environ import *
-import pandas as pd
-    </code></pre>
-    <p>Aquí importamos las bibliotecas necesarias para definir y resolver el modelo de optimización.</p>
-</section>
-
-<section>
-    <h2>Fragmento 2: Definición de Datos</h2>
-    <pre><code class="python">
-c = [
-    [61, 72, 45, 55, 66],
-    [69, 78, 60, 49, 56],
-    [59, 66, 63, 61, 47]
-]
-d = [11, 12, 9, 10, 8]
-o = [15, 20, 15]
-    </code></pre>
-    <p>Definimos los datos que serán utilizados en el modelo, que incluyen los costos, demandas y ofertas.</p>
-</section>
-
-<section>
-    <h2>Fragmento 3: Creación del Modelo</h2>
-    <pre><code class="python">
-model = ConcreteModel()
-    </code></pre>
-    <p>Creamos una instancia del modelo concreto que servirá como base para definir variables, restricciones y la función objetivo.</p>
-</section>
-
-<section>
-    <h2>Fragmento 4: Definición de Variables</h2>
-    <pre><code class="python">
-model.x = Var((1,2,3), (1,2,3,4,5), within=NonNegativeIntegers)
-    </code></pre>
-    <p>Definimos las variables que representan las cantidades de productos a producir en cada periodo de tiempo.</p>
-</section>
-
-<section>
-    <h2>Fragmento 5: Definición de la Función Objetivo</h2>
-    <pre><code class="python">
-model.obj = Objective(expr = sum(c[i-1][j-1]*model.x[i,j] for i in range(1,4) for j in range(1,6)), sense=minimize)
-    </code></pre>
-    <p>Establecemos la función objetivo para minimizar el costo total de producción, utilizando los costos y las variables definidas anteriormente.</p>
-</section>
-
-<section>
-    <h2>Fragmento 6: Definición de Restricciones</h2>
-    <pre><code class="python">
-# (Añade aquí el código para definir las restricciones de demanda y oferta)
-    </code></pre>
-    <p>En este paso, definimos las restricciones que deben cumplir las variables, basándonos en las demandas y ofertas dadas.</p>
-</section>
-
-<section>
-    <h2>Código Completo</h2>
-    <pre><code class="python">
-		model = ConcreteModel()
-
-		# Definiendo los índices para las variables
-		model.i = RangeSet(0, 2)
-		model.j = RangeSet(0, 4)
-		
-		# Definiendo las variables como enteras y no negativas
-		model.x = Var(model.i, model.j, within=NonNegativeIntegers)
-		
-		# Definiendo la función objetivo para minimizar el costo total de producción
-		model.obj = Objective(expr=sum(c[i][j] * model.x[i,j] for i in model.i for j in model.j), sense=minimize)
-		
-		# Definiendo las restricciones de demanda y oferta
-		def demand_constraint(model, j):
-			return sum(model.x[i, j] for i in model.i) == d[j]
-		model.demand_constraint = Constraint(model.j, rule=demand_constraint)
-		
-		def offer_constraint(model, i):
-			return sum(model.x[i, j] for j in model.j) == o[i]
-		model.offer_constraint = Constraint(model.i, rule=offer_constraint)
-		
-    </code></pre>
-    <p>El código Python completo que muestra cómo se crea y se resuelve el modelo de optimización utilizando Pyomo.</p>
-</section>
-
+					# Definiendo los parámetros
+					Co = 100  # Costo de realizar un pedido
+					Ch = 2    # Costo de mantenimiento por unidad por año
+					P = 20    # Precio por unidad
+					D = 1000  # Demanda anual
 				
-
+					# Creando un rango de valores de Q para evaluar
+					Q_values = np.linspace(1, 1000, 100)
+				
+					# Calculando los componentes del costo total
+					order_costs = Co * (D / Q_values)
+					holding_costs = Ch * (Q_values / 2)
+					purchase_costs = P * D
+				
+					# Calculando el costo total
+					total_costs = order_costs + holding_costs + purchase_costs
+				
+					# Graficando la curva de costo total
+					plt.plot(Q_values, total_costs, label='Costo Total')
+					plt.plot(Q_values, order_costs, label='Costo de Pedido', linestyle='--')
+					plt.plot(Q_values, holding_costs, label='Costo de Mantenimiento', linestyle='--')
+				
+					# Agregando etiquetas y título
+					plt.xlabel('Cantidad de Pedido (Q)')
+					plt.ylabel('Costo')
+					plt.title('Curva de Costo Total')
+					plt.legend()
+					plt.grid(True)
+					plt.show()
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>Beneficios de Determinar el EOQ</h2>
+					<ul>
+						<li>Optimización del nivel de inventario</li>
+						<li>Reducción de los costos de almacenamiento</li>
+						<li>Facilita la planificación de las compras</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Limitaciones del EOQ</h2>
+					<ul>
+						<li>Presupone una demanda constante</li>
+						<li>No considera descuentos por compras en grandes volúmenes</li>
+						<li>Requiere una estimación precisa de los costos</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Punto de Reorden (ROP)</h2>
+					<p>El ROP es el nivel de inventario en el que se debe realizar un nuevo pedido para reabastecer el inventario antes de que se agote.</p>
+				</section>
+				<section>
+					<h2>Cómo Determinar el ROP</h2>
+					<p>La fórmula para calcular el ROP es:</p>
+					\[
+					ROP = D \times LT
+					\]
+					<p>Donde:</p>
+					<ul>
+						<li>\(D\) = Demanda diaria</li>
+						<li>\(LT\) = Tiempo de entrega en días</li>
+					</ul>
+					<aside class="notes">
+						Ejemplo numérico: Si \(D = 20\) unidades por día y \(LT = 5\) días, entonces \(ROP = 20 \times 5 = 100\) unidades.
+					</aside>
+				</section>
+				<section>
+					<h2>Código para la Gráfica de ROP</h2>
+					<pre><code data-trim data-noescape class="python">
+					import matplotlib.pyplot as plt
+				
+					# Definiendo los parámetros
+					D = 20  # Demanda diaria
+					LT = 5  # Tiempo de entrega en días
+					ROP = D * LT  # Punto de reorden
+				
+					# Creando una lista de días y el inventario correspondiente
+					days = list(range(30))  # Un mes
+					inventory = [200 - D * day for day in days]  # Inventario inicial de 200 unidades
+				
+					# Graficando el nivel de inventario a lo largo del tiempo
+					plt.plot(days, inventory, label='Nivel de Inventario')
+					plt.axvline(x=LT, color='r', linestyle='--', label='Día de Reorden (ROP)')
+					plt.axhline(y=ROP, color='r', linestyle='--')
+				
+					# Agregando etiquetas y título
+					plt.xlabel('Días')
+					plt.ylabel('Nivel de Inventario')
+					plt.title('Gráfica del Punto de Reorden')
+					plt.legend()
+					plt.grid(True)
+					plt.show()
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>Beneficios del ROP</h2>
+					<ul>
+						<li>Evita la interrupción de la producción por falta de materiales</li>
+						<li>Minimiza el riesgo de quedarse sin stock (stockouts)</li>
+						<li>Facilita la planificación de las compras y la gestión del inventario</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Limitaciones del ROP</h2>
+					<ul>
+						<li>Depende de una demanda y un tiempo de entrega constantes</li>
+						<li>Requiere un seguimiento constante del nivel de inventario</li>
+						<li>No es adecuado para productos con demanda fluctuante</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Clasificación ABC de Inventarios</h2>
+					<p>Es una técnica que clasifica los inventarios en tres categorías (A, B y C) basadas en su importancia, generalmente determinada por el costo anual de consumo, el volumen de uso, etc.</p>
+				</section>
+				<section>
+					<h2>Ejemplo de Clasificación ABC</h2>
+					<p>Supongamos que una empresa tiene 100 productos diferentes. Podría clasificarlos como:</p>
+					<ul>
+						<li>A: Los 20 productos más caros que representan el 70% del costo total del inventario</li>
+						<li>B: Los 30 productos siguientes que representan el 20% del costo total</li>
+						<li>C: Los 50 productos restantes que representan el 10% del costo total</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Usos de la Clasificación ABC</h2>
+					<ul>
+						<li>Permite focalizar los esfuerzos de gestión en los productos más críticos (categoría A)</li>
+						<li>Facilita la implementación de políticas de inventario diferenciadas</li>
+						<li>Ayuda a identificar oportunidades de ahorro y eficiencia</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Inventario de Seguridad</h2>
+					<p>Es una cantidad adicional de inventario que se mantiene para mitigar el riesgo de quedarse sin stock debido a las fluctuaciones en la demanda o el tiempo de entrega.</p>
+				</section>
+				<section>
+					<h2>Cómo Determinar el Inventario de Seguridad</h2>
+					<p>La fórmula general es:</p>
+					\[
+					\text{Inventario de Seguridad} = Z \cdot \sigma \cdot \sqrt{LT}
+					\]
+					<p>Donde:</p>
+					<ul>
+						<li>\(Z\) = Número de desviaciones estándar para el nivel de servicio deseado</li>
+						<li>\(\sigma\) = Desviación estándar de la demanda</li>
+						<li>\(LT\) = Tiempo de entrega</li>
+					</ul>
+					<aside class="notes">
+						Ejemplo numérico: Si \(Z = 1.96\) (para un nivel de servicio del 95%), \(\sigma = 10\) unidades y \(LT = 5\) días, entonces el inventario de seguridad sería \(1.96 \cdot 10 \cdot \sqrt{5} \approx 43.82\) unidades.
+					</aside>
+				</section>
+				<section>
+					<h2>Beneficios del Inventario de Seguridad</h2>
+					<ul>
+						<li>Reduce el riesgo de interrupciones en la producción</li>
+						<li>Permite manejar incertidumbres en la demanda y el tiempo de entrega</li>
+						<li>Mejora el nivel de servicio al cliente</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Resumen de Conceptos Clave</h2>
+					<ul>
+						<li>EOQ: Cantidad óptima de pedido</li>
+						<li>ROP: Punto de reorden</li>
+						<li>Clasificación ABC: Estrategia para clasificar el inventario en grupos basados en su importancia</li>
+						<li>Inventario de seguridad: Stock adicional para mitigar los riesgos asociados con la variabilidad de la demanda y el tiempo de entrega</li>
+					</ul>
+				</section>
+																																																																												
+				
+				<section>
+					<h1>Gestión de Inventarios de Perecederos</h1>
+					<h3>Basado en las enseñanzas de Paul H. Zipkin</h3>
+					<p>Enfoque en la gestión optimizada de inventarios de productos perecederos.</p>
+				</section>
+				
+				<section>
+					<h2>Contexto y Desafíos</h2>
+					<p>Identificación de los desafíos clave en la gestión de productos perecederos.</p>
+					<ul>
+						<li>Vida útil limitada</li>
+						<li>Demandas fluctuantes</li>
+						<li>Costos asociados con el desperdicio</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Modelo de Zipkin</h2>
+					<p>Introducción a los conceptos y fórmulas básicas desarrolladas por Zipkin para la gestión de inventarios de perecederos.</p>
+				</section>
+				
+				<section>
+					<h2>Formulación Matemática</h2>
+					<p>Exploración de la formulación matemática para la gestión de inventarios de productos perecederos, incluyendo variables como la tasa de demanda y la tasa de deterioro.</p>
+					<pre><code class="language-latex">
+					\[
+					Q^* = \sqrt{\frac{2DS}{H}}
+					\]
+					\[
+					ROP = D \cdot LT
+					\]
+					</code></pre>
+					<aside class="notes">
+						Donde:
+						- \( Q^* \): Cantidad óptima de pedido
+						- \( D \): Demanda diaria
+						- \( S \): Costo de ordenar
+						- \( H \): Costo de mantener
+						- \( LT \): Lead time o tiempo de entrega
+					</aside>
+				</section>
+				
+				<section>
+					<h2>Ejemplo Práctico - Definición de Parámetros</h2>
+					<p>Definimos los siguientes parámetros para nuestro ejemplo:</p>
+					<ul>
+						<li>Demanda diaria (\(D\)) = 100 unidades</li>
+						<li>Costo de ordenar (\(S\)) = 200 USD</li>
+						<li>Costo de mantener (\(H\)) = 5 USD/unidad/año</li>
+						<li>Tiempo de entrega (\(LT\)) = 10 días</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Ejemplo Práctico - Cálculo de \(Q^*\) y ROP</h2>
+					<p>Utilizamos las fórmulas proporcionadas para calcular \(Q^*\) y ROP.</p>
+					<pre><code class="language-latex">
+					\[
+					Q^* = \sqrt{\frac{2 \cdot 100 \cdot 200}{5}} \approx 89.44 \text{ unidades}
+					\]
+					\[
+					ROP = 100 \cdot 10 = 1000 \text{ unidades}
+					\]
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>Ejemplo Práctico - Análisis</h2>
+					<p>Análisis del ejemplo y discusión sobre cómo los cálculos de \(Q^*\) y ROP pueden guiar la estrategia de gestión de inventarios.</p>
+				</section>
+				
+				<section>
+					<h2>Conclusión</h2>
+					<p>Resumen de los aprendizajes clave y cómo aplicar los principios de la gestión de inventarios de perecederos en un contexto real.</p>
+				</section>
+				
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>Zipkin, Paul H. "Foundations of Inventory Management." McGraw-Hill, 2000.</li>
+					</ul>
+				</section>
+				
  
 
 
